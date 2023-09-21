@@ -43,7 +43,7 @@ runs:
       shell: bash
       run: |
         echo "::group::Build"
-        npm ci
+        # npm ci
         ${{ inputs.build_command }}
         echo "::endgroup::"
 
