@@ -18,6 +18,10 @@ inputs:
     required: false
     # TODO: yarn?  npm run build (instead of build-storybook)?
     default: 'npm run build-storybook'
+  storybook_token:
+    description: 'Secret token'
+    required: true
+    default: ''
 outputs:
   page_url:
     description: "The URL of the page"
@@ -33,7 +37,7 @@ runs:
       if: ${{ inputs.checkout == 'true' }}
       uses: actions/checkout@v3
       with: 
-        token: ${{ secrets.STORYBOOK_TOKEN }}
+        token: ${{ inputs.storybook_token }}
 
     - name: 'Build'
       shell: bash
