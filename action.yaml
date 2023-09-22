@@ -51,6 +51,7 @@ runs:
         echo "::group::Build"
         # npm ci
         export NODE_OPTIONS=--openssl-legacy-provider
+        rustup target add aarch64-apple-darwin;
         pnpm install --no-frozen-lockfile
         pnpm run build
         cd packages/ui
