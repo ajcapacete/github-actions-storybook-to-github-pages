@@ -39,6 +39,11 @@ runs:
       with: 
         token: ${{ inputs.storybook_token }}
 
+    - name: Install pnpm
+      uses: pnpm/action-setup@v2
+      with:
+          run_install: false
+
     - name: 'Build'
       shell: bash
       run: |
