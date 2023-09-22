@@ -52,6 +52,7 @@ runs:
         # npm ci
         export NODE_OPTIONS=--openssl-legacy-provider
         pnpm install --no-frozen-lockfile
+        pnpm run build
         cd packages/ui
         pnpm install
         pnpm run build-storybook-root
