@@ -51,7 +51,9 @@ runs:
         echo "::group::Build"
         # npm ci
         export NODE_OPTIONS=--openssl-legacy-provider
-        rustup target add aarch64-apple-darwin;
+        rustup target add x86_64-unknown-linux-gnu
+        echo "#!/bin/sh" > packages/config-rs/build.sh
+        echo "cargo build --release --target aarch64-apple-darwin" >> packages/config-rs/build.sh
         pnpm install --no-frozen-lockfile
         pnpm run build
         cd packages/ui
