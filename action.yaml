@@ -50,7 +50,6 @@ runs:
       run: |
         echo "::group::Build"
         # npm ci
-        # ${{ inputs.build_command }}
         pnpm install --no-frozen-lockfile
         cd packages/ui
         pnpm install
